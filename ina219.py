@@ -1,6 +1,10 @@
-"""Library for the INA219 current and power monitor from Texas Instruments.
+"""
+Special Pi5 - GoPiGo3 robot Version gopigo3-pi5-ina219
 
-Supports the Raspberry Pi using the I2C bus.
+Library for the INA219 current and power monitor from Texas Instruments.
+
+Supports the Raspberry Pi 5 using the DexterIndustries R4RTools di_i2c  
+interface for the I2C bus on "RPI_1".
 """
 import logging
 import time
