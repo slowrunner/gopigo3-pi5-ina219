@@ -4,6 +4,9 @@
 
 Uses the DexterIndustries R4RTools file di_i2c.py to provide the I2C interface between   
 the Raspberry Pi5 2712 DMA GPIO controller chip and the INA219 sensor.  
+
+Additional changes:
+- ina.INA219(log_level=None) will turn off all logging
  
 This Python library supports the [INA219](http://www.ti.com/lit/ds/symlink/ina219.pdf)
 voltage, current and power monitor sensor from Texas Instruments on Python 3.  
