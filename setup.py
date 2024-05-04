@@ -51,4 +51,4 @@ setup(name='gopigo3-pi5-ina219',
       keywords='ina219 raspberrypi RPi5',
       install_requires=requires,
       test_suite='tests',
-      py_modules=['ina219'])
+      py_modules=['ina219','easy_ina219'])
