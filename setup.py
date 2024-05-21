@@ -28,7 +28,7 @@ classifiers = ['Development Status :: 5 - Production/Stable',
 
 # Define required packages.
 # requires = ['Adafruit_GPIO', 'mock']
-requires = ['gopigo3', 'mock']
+requires = ['gopigo3']
 
 
 def read_long_description():

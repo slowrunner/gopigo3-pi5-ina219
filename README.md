@@ -1,6 +1,7 @@
-# Raspberry Pi 5 - PiOS Bookworm - GoPiGo3 Python Library for Voltage and Current Sensors Using the INA219
+# Raspberry Pi 5 - GoPiGo3 Python Library for Voltage and Current Sensors Using the INA219
 
-### This is a special version for Raspberry Pi 5 - PiOS Bookworm 64-bit - GoPiGo3 robots
+### This is a special version for Raspberry Pi 5 GoPiGo3 robots
+### For PiOS Bookworm 64-bit and Ubuntu 22 in Docker
 
 Uses the DexterIndustries R4RTools file di_i2c.py to provide the I2C interface between   
 the Raspberry Pi5 2712 DMA GPIO controller chip and the INA219 sensor.  
@@ -66,7 +67,11 @@ The library has been tested with:
 - PiOS Bookworm 64-bit Desktop on a  
 - Raspberry Pi 5 4GB 
 
-## Installation
+- the GoPiGo3 robot running
+- Ubuntu 22 64-bit Desktop in Docker
+- Raspberry Pi 5 4GB
+
+## Installation to PiOS Bookworm
 
 1) Clone the repository
 2) cd gopigo3-pi5-ina219
@@ -74,6 +79,19 @@ The library has been tested with:
 
 Remember to enable the I2C bus under the _Advanced Options_
 of _raspi-config_.
+
+## Docker Installation
+
+1) Build gopigo3_pi5_ina219 wheel and copy it to docker/gopigo3 folder
+```
+cd ~/GoPi5Go/config/docker
+./build_ina219_wheel.sh
+```
+2) Add gopigo3_pi5_ina219 to docker/gopigo3/requirements.txt
+
+3) Existing GoPiGo3 API dockerfile commands will install  
+ina219 and easy_ina219 packages into the docker container  
+
 
 ## Usage
 
