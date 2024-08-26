@@ -87,8 +87,14 @@ class EasyINA219():
     def ave_milliamps(self):
             clist = []
             for i in range(3):
-                # cBatt = self.current()
-                cBatt = self.ina219.current()
+                ifMutexAcquire(self.use_mutex)
+                try:
+                    # cBatt = self.current()
+                    cBatt = self.ina219.current()
+                except Exception as e:
+                    print(e)
+                finally:
+                    ifMutexRelease(self.use_mutex)
                 clist += [cBatt]
                 time.sleep(0.02)  # cannot be faster than 0.02
             return statistics.mean(clist)
@@ -96,8 +102,15 @@ class EasyINA219():
     def ave_watts(self):  # in Watts (not mW like ina.power())
             plist = []
             for i in range(3):
-                # pBatt = self.power()
-                pBatt = self.ina219.power()
+                ifMutexAcquire(self.use_mutex)
+                try:
+                    # pBatt = self.power()
+                    pBatt = self.ina219.power()
+                except Exception as e:
+                    print(e)
+                    vBatt = 0
+                finally:
+                    ifMutexRelease(self.use_mutex)
                 plist += [pBatt]
                 time.sleep(0.02)  # cannot be faster than 0.02
             return statistics.mean(plist)/1000.0
